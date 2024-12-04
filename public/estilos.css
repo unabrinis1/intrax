@@ -1,0 +1,378 @@
+/* Variables de colores y tipografía */
+:root {
+    --color-primario: #3498db;
+    --color-secundario: #2ecc71;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333;
+    --color-gris-claro: #f1f1f1;
+    --fuente-principal: 'Roboto', sans-serif;
+}
+
+/* Estructura básica */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* Estilo para el logo de Intrax */
+.logo-intrax {
+    display: block;
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 200px; 
+    height: auto; 
+}
+
+
+
+/* Estilo general */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Botones de usuarios de prueba */
+.btn-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 100px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+    color: #3498db;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-user i {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    
+}
+
+.btn-user:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Espaciado responsivo */
+@media (max-width: 2090px) {
+    .btn-user {
+        width: 80px;
+        padding: 10px 20px;
+    }
+
+    .btn-user i {
+        font-size: 1rem;
+    }
+
+    .btn-user span {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+body {
+    background: linear-gradient(120deg, #e0f7fa, #e0f2f1, #f1f8e9); 
+    background-size: 300% 300%;
+    animation: cambiarColor 15s ease infinite;
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+}
+
+@keyframes cambiarColor {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedores principales */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    color: var(--color-primario);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Tarjetas de resumen */
+.card {
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--color-blanco);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.bg-primary { background-color: var(--color-primario); }
+.bg-warning { background-color: #ffc107; }
+.bg-success { background-color: #28a745; }
+
+/* Tabla de tickets */
+.table {
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 15px;
+}
+
+.table th {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--color-gris-claro);
+}
+
+/* Botones */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primario);
+    border: none;
+    color: var(--color-blanco);
+}
+
+.btn-primary:hover {
+    background-color: #2879b9;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: var(--color-blanco);
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Formularios */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 7px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+label {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+/* Modales */
+.modal-header, .modal-footer {
+    background-color: var(--color-gris-claro);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+}
+
+/* Media queries específicas para iPhone y pantallas pequeñas */
+@media (max-width: 375px) {
+    /* Contenedor principal */
+    .container {
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Botones */
+    .btn {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        width: 100%; 
+    }
+
+    /* Tablas */
+    .table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    /* Tarjetas */
+    .card {
+        margin-bottom: 1rem;
+        padding: 10px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    /* Formularios */
+    .form-control {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    /* Modales */
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .modal-body {
+        font-size: 0.9rem;
+    }
+
+   
+
+/* Espaciado adicional para pantallas pequeñas */
+
+@media (max-width: 450px) {
+    .panel-botones {
+        gap: 15px; 
+        justify-content: center; 
+        margin-top: 20px; 
+    }
+
+    .btn {
+        font-size: 0.8rem; 
+        padding: 6px 12px; 
+        width: 100%; 
+    }
+
+    h2 {
+        font-size: 1.5rem; 
+        margin-bottom: 10px; 
+        text-align: center; 
+    }
+}
+
+
+
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .logo-intrax {
+        max-width: 150px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-intrax {
+        max-width: 120px; /
+    }
+}
+
+
+
+
+
+
+
+}
+
+
+
