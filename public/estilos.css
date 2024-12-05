@@ -353,7 +353,7 @@ label {
 
 
 
-/* Media query para pantallas más pequeñas */
+/* Media query para pantallas mas pequeñas */
 @media (max-width: 768px) {
     .logo-intrax {
         max-width: 150px; 
