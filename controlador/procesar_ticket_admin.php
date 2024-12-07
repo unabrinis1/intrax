@@ -24,7 +24,7 @@ $stmt->bind_param("ssssiii", $titulo, $descripcion, $categoria, $estado, $usuari
 
 if ($stmt->execute()) {
     // Redirigir al usuario de vuelta a admin_home.php después de crear el ticket
-    header("Location: ../Vista/admin_home.php?ticket_creado=1");
+    header("Location: ../vista/admin_home.php?ticket_creado=1");
     exit();
 } else {
     echo "Error al crear el ticket: " . $conn->error;

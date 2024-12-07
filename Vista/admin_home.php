@@ -12,6 +12,7 @@ include '../controlador/conexion.php';
 // Valores predeterminados para los filtros
 $categoria_filtro = $_POST['categoria'] ?? '';
 $estado_filtro = $_POST['estado'] ?? '';
+$busqueda = $_POST['busqueda'] ?? ''; // Nuevo campo para búsqueda
 
 // Consultas para contar los tickets según su estado (sin filtrar por usuario)
 $sql_abiertos = "SELECT COUNT(*) as total FROM tickets WHERE estado = 'abierto'";
@@ -53,6 +54,19 @@ if ($estado_filtro) {
     $types .= "s";
 }
 
+// Filtro por término de búsqueda
+if (!empty($busqueda)) {
+    $sql_tickets .= " AND (
+        tickets.id LIKE ? OR 
+        tickets.titulo LIKE ? OR 
+        usuarios_creador.usuario LIKE ?
+    )";
+    $params[] = '%' . $busqueda . '%';
+    $params[] = '%' . $busqueda . '%';
+    $params[] = '%' . $busqueda . '%';
+    $types .= "sss";
+}
+
 // Preparar la consulta con los filtros aplicados
 $stmt_tickets = $conn->prepare($sql_tickets);
 if ($types) {
@@ -70,6 +84,7 @@ while ($ticket = $result_tickets->fetch_assoc()) {
 $stmt_tickets->close();
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -155,6 +170,22 @@ $conn->close();
                 </div>
             </div>
         </div>
+
+    <!-- boton para buscar Tickets -->
+
+        <form method="POST" action="admin_home.php" class="d-flex mb-4">
+    <input type="text" name="busqueda" id="busqueda" class="form-control" placeholder="Buscar tickets por título, usuario o número..."
+           value="<?= htmlspecialchars($busqueda ?? ''); ?>">
+    <button type="submit" class="btn btn-primary ml-2">
+        <i class="fas fa-search"></i>
+    </button>
+</form>
+
+
+
+
+
+
 
         <!-- Tabla de Tickets -->
         <div class="table-responsive">
