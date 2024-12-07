@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->close();
     $conn->close();
-    header("Location: ../Vista/listar_usuarios.php");
+    header("Location: ../vista/listar_usuarios.php");
     exit();
 }
 ?>

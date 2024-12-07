@@ -19,7 +19,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("si", $estado, $ticket_id);
 
 if ($stmt->execute()) {
-    header("Location: ../Vista/ver_ticket_agente.php?id=$ticket_id");
+    header("Location: ../vista/ver_ticket_agente.php?id=$ticket_id");
     exit();
 } else {
     echo "Error al actualizar el estado del ticket: " . $conn->error;

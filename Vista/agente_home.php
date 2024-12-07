@@ -171,7 +171,7 @@ $conn->close();
         <td><?= htmlspecialchars($ticket['categoria']); ?></td>
         <td><?= htmlspecialchars($ticket['estado']); ?></td>
         <td><?= htmlspecialchars($ticket['agente_asignado'] ?? 'Sin asignar'); ?></td>
-        <td><a href="ver_ticket_admin.php?id=<?= $ticket['id']; ?>" class="btn btn-info btn-sm">Ver</a></td>
+        <td><a href="ver_ticket_agente.php?id=<?= $ticket['id']; ?>" class="btn btn-info btn-sm">Ver</a></td>
     </tr>
     <?php endforeach; ?>
 </tbody>

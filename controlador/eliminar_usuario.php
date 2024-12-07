@@ -19,11 +19,11 @@ if (isset($_GET['id'])) {
 
     $stmt->close();
     $conn->close();
-    header("Location: ../Vista/listar_usuarios.php");
+    header("Location: ../vista/listar_usuarios.php");
     exit();
 } else {
     $_SESSION['error'] = "ID de usuario no válido.";
-    header("Location: ../Vista/listar_usuarios.php");
+    header("Location: ../vista/listar_usuarios.php");
     exit();
 }
 ?>

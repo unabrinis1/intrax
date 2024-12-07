@@ -3,7 +3,7 @@ session_start();
 include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitización de las entradas
+    
     $usuario = trim($_POST['usuario']);
     $contrasena = trim($_POST['contrasena']);
 

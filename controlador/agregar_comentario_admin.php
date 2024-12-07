@@ -31,7 +31,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("iis", $ticket_id, $usuario_id, $comentario);
 
 if ($stmt->execute()) {
-    header("Location: ../Vista/ver_ticket_admin.php?id=$ticket_id"); // Redirigir a la vista del ticket de admin
+    header("Location: ../vista/ver_ticket_admin.php?id=$ticket_id"); // Redirigir a la vista del ticket de admin
     exit();
 } else {
     echo "Error al añadir el comentario: " . $conn->error;

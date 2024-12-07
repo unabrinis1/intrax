@@ -21,7 +21,7 @@ $stmt->bind_param("iis", $ticket_id, $usuario_id, $comentario);
 if ($stmt->execute()) {
     // Redirigir al usuario de vuelta a la vista adecuada
     if ($_SESSION['rol_id'] == '2') { // Agente
-        header("Location: ../Vista/ver_ticket_agente.php?id=$ticket_id");
+        header("Location: ../vista/ver_ticket_agente.php?id=$ticket_id");
     } else { // Usuario normal
         header("Location: ../vista/ver_ticket.php?id=$ticket_id");
     }

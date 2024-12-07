@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         $_SESSION['mensaje'] = "Usuario creado con éxito.";
-        header("Location: ../Vista/listar_usuarios.php");
+        header("Location: ../vista/listar_usuarios.php");
     } else {
         $_SESSION['error'] = "Error al crear el usuario: " . $conn->error;
-        header("Location: ../Vista/listar_usuarios.php");
+        header("Location: ../vista/listar_usuarios.php");
     }
 
     $stmt->close();

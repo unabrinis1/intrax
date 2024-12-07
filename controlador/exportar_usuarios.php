@@ -31,7 +31,7 @@ while ($row = $result->fetch_assoc()) {
     fputcsv($output, [$row['usuario'], $row['email'], $rol]);
 }
 
-// Cerrar la conexión
+
 fclose($output);
 $conn->close();
 exit();
