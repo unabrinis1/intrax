@@ -120,7 +120,7 @@ $result_usuarios = $stmt_usuarios->get_result();
     <!-- Modal Crear Usuario -->
     <div class="modal fade" id="crearUsuarioModal" tabindex="-1" aria-labelledby="crearUsuarioLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <form method="POST" action="crear_usuario.php">
+            <form method="POST" action="../controlador/crear_usuario.php">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="crearUsuarioLabel">Crear Nuevo Usuario</h5>

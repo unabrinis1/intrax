@@ -185,8 +185,6 @@ $conn->close();
 
 
 
-
-
         <!-- Tabla de Tickets -->
         <div class="table-responsive">
             <table class="table table-bordered">
